@@ -1,0 +1,12 @@
+<p class="d-none">This one generates a text for your webpage</p>
+
+
+<h1>H1 <%= params[:user].email %></h1>
+
+<p>
+  Someone requested a reset for your password.
+  <br>
+  If this was you, click the link below to reset your password:
+</p>
+
+<%= link_to "Reset Password", password_reset_edit_url(token: @token) %>

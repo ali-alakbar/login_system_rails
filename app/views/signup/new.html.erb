@@ -1,0 +1,30 @@
+<div >
+    <h1 class="text-primary text-center pt-5 mb-3">Signup Page</h1>
+
+
+    <% if @user.errors.any?%>
+        <div class="alert alert-danger">
+            <% @user.errors.full_messages.each do |msg|%>
+                <div><%=msg%></div>
+            <%end%>
+        </div>
+    <%end%>
+
+    <%= form_with model: @user, url: signup_path, data: {turbo: false} do |f|%>
+    <div class="mb-3">
+        <%= f.label "Email:"%>
+        <%= f.text_field :email, class:"form-control", placeholder: "jon@doe.com"%>
+    </div>
+    <div class="mb-3">
+        <%= f.label "Password:"%>
+        <%= f.password_field :password, class:"form-control", placeholder: "password"%>
+    </div>
+    <div class="mb-3">
+        <%= f.label "Password confirmation:"%>
+        <%= f.password_field :password_confirmation, class:"form-control", placeholder: "password"%>
+    </div>
+    <div class="mb-3">
+        <%= f.submit "Sign up" ,class:"bg-danger text-white border-0 p-2"%>
+    </div>
+    <%end%>
+</div>

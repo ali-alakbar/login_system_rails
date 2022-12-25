@@ -1,0 +1,13 @@
+<div >
+    <h1 class="text-primary text-center pt-5 mb-3">Confirm your email.</h1>
+
+    <%= form_with url: password_reset_path, data: {turbo: false} do |f|%>
+    <div class="mb-3">
+        <%= f.label "Email:"%>
+        <%= f.text_field :email, class:"form-control", placeholder: "jon@doe.com"%>
+    </div>
+    <div class="mb-3">
+        <%= f.submit "Send email" ,class:"bg-danger text-white border-0 p-2"%>
+    </div>
+    <%end%>
+</div>

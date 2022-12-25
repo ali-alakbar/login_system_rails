@@ -1,0 +1,24 @@
+<div >
+    <h1 class="text-primary text-center pt-5 mb-3">Signin Page</h1>
+
+    <p class="text-danger">
+        <%= notice %>
+    </p>
+
+    <%= form_with url: signin_path, data: {turbo: false} do |f|%>
+    <div class="mb-3">
+        <%= f.label "Email:"%>
+        <%= f.text_field :email, class:"form-control", placeholder: "jon@doe.com"%>
+    </div>
+    <div class="mb-3">
+        <%= f.label "Password:"%>
+        <%= f.password_field :password, class:"form-control", placeholder: "password"%>
+    </div>
+    <div class="mb-3">
+        <%= f.submit "Sign in" ,class:"bg-danger text-white border-0 p-2"%>
+    </div>
+    <div class="mb-3">
+        <%= link_to "Forgot your password?" ,password_reset_path %>
+    </div>
+    <%end%>
+</div>
